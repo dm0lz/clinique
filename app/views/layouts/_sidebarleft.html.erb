@@ -1,0 +1,23 @@
+ <div class="well sidebar-nav sidebarleft">
+
+    <ul class="nav nav-tabs nav-stacked">
+
+        <li class="nav-header">Indications Esthétiques</li>
+
+        <% soinEsthetique.each do |soin| %>
+            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+        <% end %>
+
+    </ul>
+
+    <ul class="nav nav-tabs nav-stacked">
+
+        <li class="nav-header">Dermatologie</li>
+
+        <% soinDermatologie.each do |soin| %>
+            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+        <% end %>
+
+    </ul>
+</div>
+

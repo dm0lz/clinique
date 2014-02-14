@@ -1,0 +1,144 @@
+
+
+
+.flickr_widget_wrapper ul li{
+	border-bottom: 1px dotted white; 
+	padding: 7px 0px 7px 15px;
+}
+.flickr_widget_wrapper ul li a{
+	color: $bleu;
+}
+.flickr_widget_wrapper ul li a:hover{
+	color: white;
+}
+#footer_bar h4{
+	color: $orange;
+}
+
+h4.sidebar_header{
+	margin-left: 25px;
+}
+
+/*Footer SideBar
+-----------------*/
+
+
+.footer_twitter {
+	background:#e1e1e1 url(../img/bg_pattern1.png) repeat 0 0;
+	position:relative;
+	padding:20px 0;
+	margin-top:15px;
+}
+.footer_twitter:before {
+	content:'';
+	position:absolute;
+	width:100%;
+	left:0px;
+	bottom:-25px;
+	height:25px;
+	display:block;
+	background:url(../img/bg_tweet_shadow.png) no-repeat center;
+}
+.twitter_line {
+	position:relative;
+}
+.twitter_line:before {
+	content:'';
+	position:absolute;
+	width:9px;
+	left:50%;
+	bottom:-25px;
+	height:5px;
+	display:block;
+	margin-left:-5px;
+	background:url(../img/bg_tweet_arrow.png) no-repeat center;
+}
+.footer_twitter ul li {
+	text-align:left;
+	padding:0 0 0 30px;
+	line-height:20px;
+	color:#777777;
+	text-shadow:0 1px 0 #eaeaea;
+	background:url(../img/marker_tweet1.png) no-repeat 0 0;
+}
+.footer_twitter ul li a:hover {
+	color:#777777;
+}
+
+.pre_footer {
+	background:rgb(145, 201, 170) url(../img/bg_pattern2.png) repeat 0 0;
+	
+	//background: rgb(254,255,255); /* Old browsers */
+	//background: -moz-linear-gradient(top,  rgba(254,255,255,1) 0%, rgba(190,223,205,1) 100%); /* FF3.6+ */
+	//background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,255,255,1)), color-stop(100%,rgba(190,223,205,1))); /* Chrome,Safari4+ */
+	//background: -webkit-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(190,223,205,1) 100%); /* Chrome10+,Safari5.1+ */
+	//background: -o-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(190,223,205,1) 100%); /* Opera 11.10+ */
+	//background: -ms-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(190,223,205,1) 100%); /* IE10+ */
+	//background: linear-gradient(to bottom,  rgba(254,255,255,1) 0%,rgba(190,223,205,1) 100%); /* W3C */
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#bedfcd',GradientType=0 ); /* IE6-9 */
+
+	padding:45px 0 45px 0;
+	text-align:left;
+}
+.pre_footer, 
+.pre_footer p, 
+.pre_footer span, 
+.pre_footer div {
+	color:#777777;
+}
+.pre_footer .light {
+	color:#ababab;
+}
+
+
+/*Footer 
+---------*/
+footer {
+	min-height:60px;
+	position:relative;
+}
+footer .footer_border {
+	background:$orange url(../img/bg_pattern2.png) repeat 0 0;
+	height:5px;
+	display:block;
+}
+footer .copyright {
+	float:left;
+	display:inline-block;
+	padding:21px 0 23px 0;
+	line-height:16px;
+	font-size:13px;
+	color:#777777;
+}
+footer .socials {
+	padding-top:20px;
+	float:right;
+	display:inline-block;
+}
+footer a.btn2top {
+	position:absolute;
+	left:50%;
+	margin-left:-18px;
+	bottom:5px;
+	display:block;
+	width:36px;
+	height:29px;
+	background:#373737 url(../img/bg_pattern2.png) repeat 0 0;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+}
+footer a.btn2top:before {
+	content:'';
+	position:absolute;
+	left:12px;
+	top:12px;
+	background:url(../img/btn2top.png) no-repeat center;
+	width:12px;
+	height:7px;
+	display:block;
+}
+
+
+
+
+

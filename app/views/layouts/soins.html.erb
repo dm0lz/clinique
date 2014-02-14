@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7" lang="fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="fr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="fr" class="ie ie9"> <![endif]-->
+<html lang="fr">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+
+    <meta name="author" content="www.cliniqueesthetique.com">
+    <meta name="description" content=""/>
+
+    <%= yield :metas %>
+
+    <!-- Mobile Specific Metas
+    +++++++++++++++++++++++++++ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=Edge"><![endif]-->
+    <link rel="shortcut icon" href="img/favico.ico">
+
+    <link rel="apple-touch-icon" href="img/apple_icons_57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple_icons_72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple_icons_114x114.png">
+
+    <%#= favicon_link_tag 'favicon.ico' %>
+
+    <title><%= yield :titre %></title>
+
+    <%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag "application"%>
+
+        
+    <!--[if IE 8 ]><script>
+        var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+        for (var i = 0; i < e.length; i++) {
+            document.createElement(e[i]);
+        }		
+    </script><![endif]-->
+
+</head>
+
+<body>
+	
+	
+	<%= render "layouts/header" %>
+    
+
+	<div class="container-fluid content_principal">
+	    <div class="row-fluid">
+
+	        <div class="span2">
+	            <%= render 'layouts/sidebarleft' %>
+	        </div>
+
+	        <div class="span10">
+	            <section>
+
+	            	<% if notice %>
+			        	<div class="containerss">
+			            	<% if flash[:notice] %><br/>
+			                	<p class="alert alert-success"><%= notice %></p>
+			            	<% end %>
+			            	<% if flash[:alert] %><br/>
+			                	<p class="alert alert-error"><%= alert %></p> 
+			            	<% end %>
+			            	<br/>
+			        	</div>
+	            	<% end %>
+
+	            	
+	            		<%= yield %>
+
+
+	          	</section>
+	        </div>
+
+	    </div>
+	</div><!-- fin div container-fluid -->
+
+                                
+
+    <%= render "layouts/prefooter" %>
+    <%= render "layouts/footer" %>
+    
+
+    <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+    <%= javascript_include_tag "gmaps" %>
+    <%= javascript_include_tag "application" %>
+
+
+    <header class="fixed-menu"></header>
+    
+    <div class="layout_trigger clean_bg_cont" style="background-color:#cde1d6;"></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

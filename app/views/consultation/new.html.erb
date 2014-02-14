@@ -1,0 +1,126 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+
+
+<p style="font-size:10px;color:red;">** 2 champs sont obligatoires : "Votre Email" et "Expliquez-moi votre problème esthétique"</p>
+<div class="consultation">
+
+<%= form_for @messageconsultation, :url => consultation_path do |form| %>
+    <p style="color:#3399ff;font-size:23px;font-family:Arial;border-bottom:1px solid green;line-height:30px;">Renseignements personnel</p><br/>
+    
+    
+          <div class="field">
+               <p>Votre Email</p>
+              <!--<%= form.label :email %>-->
+		      <%= form.text_field :email %>
+		  </div>
+		    <div class="field">
+		      <%= form.label :ville %>
+		      <%= form.text_field :ville %>
+		  </div>
+          <!-- <div class="field">
+		      <%= form.label :codepostal %>
+		      <%= form.text_field :codepostal %>
+          </div>
+          -->
+            
+        
+            <div class="field">
+		        <%= form.label :poids %>
+		        <%= form.text_field :poids %>
+		    </div>
+		    <div class="field">
+		        <%= form.label :sexe %>
+		        <%= form.text_field :sexe %>
+		    </div>
+            <div class="field">
+                <p>Taille</p>
+                <!--<%= form.label :taille %>-->
+		        <%= form.text_field :taille %>
+		    </div>
+        
+            <div class="field">
+                <p>Date de naissance</p>
+	            <!--<%= form.label :dob %>-->
+	            <%= form.text_field :dob %>
+	        </div>
+<br/><br/>
+            <p style="color:#3399ff;font-size:23px;font-family:Arial;border-bottom:1px solid green;line-height:30px;">Renseignements Médicaux</p><br/>
+
+             <div class="field">
+                <p>Quelle est votre tension Artérielle ?</p>
+		        <!--<%= form.label :tension %>-->
+		        <%= form.text_field :tension %>
+		    </div>
+
+            <div class="field">
+                <p>Consommation d'alcool ? lesquels ? Quantité ?</p>
+		        <!--<%= form.label :alcool %>-->
+		        <%= form.text_field :alcool %>
+		    </div>
+		    <div class="field">
+                <p>Consommation de tabac ?</p>
+		        <!--<%= form.label :tabac %>-->
+		        <%= form.text_field :tabac %>
+		    </div>
+
+
+            <div class="field">
+                <p>Avez-vous subi des opérations chirurgicales ? Lesquelles ? </p>
+                <!--<%= form.label :operation %>-->
+		        <%= form.text_area :operation, :rows => 3 %>
+            </div>
+
+        
+            <div class="field">
+                <p>Prenez-vous des médicaments ? Lesquels ?</p>
+                <!--<%= form.label :medicament %>-->
+		        <%= form.text_area :medicament, :rows => 3 %>
+            </div>
+		    <div class="field">
+                <p>Faites-vous des allergies aux médicaments ? Lesquelles ?</p>                
+                <!--<%= form.label :allergie %>-->
+		        <%= form.text_area :allergie, :rows => 3 %>
+		    </div>
+            <div class="field">
+                <p>Faites-vous du sport ? Lesquels ? Nombre d'heures par semaine?</p>
+                <!--<%= form.label :sport %>-->
+                <%= form.text_area :sport, :rows => 3 %>
+            </div>
+            <div class="feld">
+                <p>
+Expliquez-moi votre problème esthétique : 
+                </p>
+                <!--<%= form.label :probleme %>-->
+                <%= form.text_area :probleme,  :rows => 8 %>
+            </div>
+
+        
+
+    <br/><br/>
+  <fieldset class="actions">
+    <%= form.submit "Envoyer votre consultation", :class => "btn btn-large btn-success env" %>
+  </fieldset>
+  <br/><br/>
+</div>
+  </div>
+
+
+
+
+
+
+
+
+
+<br/><br/><br/><br/>
+
+
+
+
+<% end %>
+
+
+

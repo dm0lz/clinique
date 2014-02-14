@@ -1,0 +1,74 @@
+
+<% content_for :metas do %>
+	
+	<meta name="keywords" content="<%= @soin.metas %>"/>
+
+<% end %>
+
+
+<% content_for :titre do %>
+
+	<%= @soin.title %>
+
+<% end %>
+
+<div class="yieldwrap">
+
+<div class="span10">
+
+	<% if admin_signed_in? %>
+		<div data-no-turbolink>
+			<%= link_to 'Editer Photos, Metas et Page Category', "/soins/#{@soin.id}/edit", :class => "btn btn-info", :style => "margin-left: 10px;" %>
+	    	<%= link_to 'Editer Page Text', "/editor/soins/#{@soin.id}", :class => "btn btn-success", :style => "margin-left: 10px;" %>
+	    	<%= link_to 'Destroy', @soin, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", :style => "margin-left: 10px;" %>
+	    	<br/>
+	    	<br/>
+		</div>
+	<% end %>
+
+	<div class="texteindex">
+		<div id="body1" data-mercury="full" class="mercury-region" data-type="editable"><%= raw(@soin.body1) %></div>
+	</div>
+
+
+</div>
+
+
+
+<div class="span2">
+
+	<% if @soin.picture_url %>
+		<% unless @soin.picture_url.empty? %>
+			<%= image_tag (@soin.picture_url) %>
+			<%= link_to "Destroy", {:controller => "soins", :action => "destroyPicture", :picToDestroy => "picture", :id => @soin.id}, {:method => :post, :class => "btn-danger"} if admin_signed_in? %>
+		<% end %>
+	<hr/>
+	<% end %>
+	<% if @soin.image1_url  %>
+		<%= image_tag (@soin.image1_url) unless @soin.image1_url.empty? %>
+		<%= link_to "Destroy", {:controller => "soins", :action => "destroyPicture", :picToDestroy => "image1", :id => @soin.id}, {:method => :post, :class => "btn-danger"} if admin_signed_in? %>
+	<hr/>
+	<% end %>
+	<% if @soin.image2_url %>
+		<%= image_tag (@soin.image2_url) unless @soin.image2_url.empty? %>
+		<%= link_to "Destroy", {:controller => "soins", :action => "destroyPicture", :picToDestroy => "image2", :id => @soin.id}, {:method => :post, :class => "btn-danger"} if admin_signed_in? %>
+	<hr/>
+	<% end %>
+	<% if @soin.image3_url %>
+		<%= image_tag (@soin.image3_url) unless @soin.image3_url.empty? %>
+		<%= link_to "Destroy", {:controller => "soins", :action => "destroyPicture", :picToDestroy => "image3", :id => @soin.id}, {:method => :post, :class => "btn-danger"} if admin_signed_in? %>
+	<hr/>
+	<% end %>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+

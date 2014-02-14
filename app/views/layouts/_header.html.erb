@@ -1,0 +1,76 @@
+<header>
+<style type="text/css">
+    div.call_us a:hover{
+        color: white !important;
+    }
+</style>
+
+    <div class="banner">
+        <div class="logo">
+            <%= link_to( (image_tag '/img/logo.png'), root_path) %>
+        </div>
+        <div class="titre">
+            <%= link_to( (image_tag '/img/titre.png'), root_path) %>
+        </div>
+        <!--<div class="titre2">
+            <p>Clinique spécialisée dans la médecine et la chirurgie esthétique</p>
+        </div>-->
+        <div class="tel">
+            <p>Tél: 04 78 94 37 79</p>
+            <p>37 rue Duquesne 69006 Lyon</p>
+        </div>
+
+    </div>
+ 
+
+    <div class="header_wrapper container">
+        <nav>
+            <ul class="menu">
+
+                <li class="current-menu-parent">
+                    <a href="/">ACCUEIL</a>
+                </li>
+
+                <li><a href="javascript:void(0)">CHIRURGIE ESTHETIQUE</a>
+                    <ul class="sub-menu">
+                        <% soinChirurgie.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>   
+                    </ul>
+                </li>
+                
+                <li><a href="javascript:void(0)">LASER</a>
+                    <ul class="sub-menu">
+                        <% soinLaser.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>   
+                    </ul>
+                </li>
+                
+                <li><a href="javascript:void(0)">MEDECINE ESTHETIQUE</a>
+                    <ul class="sub-menu">
+                        <% soinMedecine.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>   
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/consultation" data-no-turbolink>CONSULTATION EN LIGNE</a>
+                </li>
+
+                <li>
+                    <a href="/contact" data-no-turbolink>CONTACT</a>
+                </li>
+
+                <% if admin_signed_in? %>
+                    <li><%= link_to('Admin', "/admin/index", :style => "margin-right: 5px;color:red;border-top:2px solid green;") %></li>
+                    <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :style => "color:red;border-top:2px solid green;") %></li>       
+                <% end %>
+
+            </ul><!-- .menu -->
+            <div class="clear"></div>
+        </nav>
+        
+    </div>
+</header>

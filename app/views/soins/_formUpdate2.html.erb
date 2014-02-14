@@ -1,0 +1,56 @@
+<%= form_for @soin, :url => { :id => @soin.id, :action => "update2" }, :html => { :method => :put, :multipart => true } do |f| %>
+
+  <% if @soin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@soin.errors.count, "error") %> prohibited this soin from being saved:</h2>
+
+      <ul>
+      <% @soin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Modifier la page de soin <%= @soin.title %></h3>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select([ ["chirurgie", "chirurgie"], ["medecine", "medecine"], ["dermatologie", "dermatologie"], ["laser", "laser"], ["esthetique", "esthetique"] ], @soin.category) %>
+  </div>
+  <div class="field">
+    <%= f.label "Metas keywords" %>
+    <%= f.text_field :metas %>
+  </div>
+  <div class="field">
+    <%= f.label "image0" %>
+    <%= image_tag @soin.picture_url, :size => "50x50" if @soin.picture_url %>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label "image1" %>
+    <%= image_tag @soin.image1_url, :size => "50x50" if @soin.image1_url %>
+    <%= f.file_field :image1 %>
+  </div>
+  <div class="field">
+    <%= f.label "image2" %>
+    <%= image_tag @soin.image2_url, :size => "50x50" if @soin.image2_url %>
+    <%= f.file_field :image2 %>
+  </div>
+  <div class="field">
+    <%= f.label "image3" %>
+    <%= image_tag @soin.image3_url, :size => "50x50" if @soin.image3_url %>
+    <%= f.file_field :image3 %>
+  </div>
+
+  <hr/>
+
+  <div class="actions">
+    <%= f.submit "Modifier la page soin", :class => 'btn btn-large btn-warning' %>
+  </div>
+
+  <hr/>
+
+
+<% end %>

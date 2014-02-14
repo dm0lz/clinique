@@ -1,0 +1,33 @@
+
+<%= form_for @nouveaute, :url => { :id => @nouveaute.id, :action => "update2" }, :html => { :method => :put, :multipart => true }  do |f| %>
+  <% if @nouveaute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nouveaute.errors.count, "error") %> prohibited this nouveaute from being saved:</h2>
+
+      <ul>
+      <% @nouveaute.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, :rows => 5  %>
+  </div>
+  <div class="field">
+    <%= f.label "image" %>
+    <%= image_tag @nouveaute.image_url, :size => "50x50" if @nouveaute.image_url %>
+    <%= f.file_field :image %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit :class => "btn btn-success" %>
+  </div>
+  <br/>
+<% end %>

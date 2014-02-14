@@ -1,0 +1,31 @@
+
+<div class="texteindex">
+
+<% if admin_signed_in? %>
+    <%= link_to 'Créer une Nouvelle Technique', new_nouveaute_path, :class => "btn btn-warning" %>
+    <br />
+<% end %>
+
+<% @nouveautes.each do |nouveaute| %>
+
+    <h2><%= link_to nouveaute.title, nouveaute %></h2>
+
+    <% if admin_signed_in? %>
+        <div data-no-turbolink>
+            <%= link_to "Editer les Photos de l'Article ", "/nouveautes/#{nouveaute.id}/edit", :class => "btn btn-info", :style => "margin-left: 10px;" %>
+            <%= link_to "Editer le texte de l'article", "/editor/nouveautes/#{nouveaute.id}", :class => "btn btn-success", :style => "margin-left: 10px;" %>
+            <%= link_to 'Destroy', nouveaute, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", :style => "margin-left: 10px;" %>
+            <br/>
+            <br/>
+        </div>
+    <% end %>
+
+    <p><%= raw(nouveaute.content) %></p>
+    <p><%= image_tag nouveaute.image_url, :size => "50x50" if nouveaute.image_url %></p>
+
+
+<% end %>
+
+
+
+</div>

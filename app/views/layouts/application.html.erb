@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7" lang="fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="fr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="fr" class="ie ie9"> <![endif]-->
+<html lang="fr">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+
+    <meta name="author" content="www.cliniqueesthetique.com">
+
+    <meta name="description" content="Clinique chirurgie esthetique, lipoaspiration, greffes de cheveux, médecine esthétique, lifting, epilation laser lyon ...">
+
+    <meta name="keywords" content="Clinique chirurgie esthétique, lipoaspiration, liposuccion,  greffe de cheveux, médecine esthétique, épilation laser lyon, botox, injection rides, injection acide hyaluronique, laser dermatologique, rides, greffes de cheveux,  microgreffe de cheveux, lipolyse prothèses mammaires, chirurgie du nez, chirurgie des paupières, rajeunissement, calvitie">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=Edge"><![endif]-->
+
+    <%= favicon_link_tag '/favicon.ico' %>
+
+    <title>Clinique Esthétique Duquesne</title>
+
+    <%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag "application" %>
+
+        
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-43177142-1', 'cliniqueesthetique.com');
+		ga('send', 'pageview');
+	</script>
+
+</head>
+
+<body>
+	
+	<%#= binding.pry %>
+	<%= render :partial => "layouts/header", :locals => { :soinMedecine => soinMedecine, :soinChirurgie => soinChirurgie, :soinEsthetique => soinEsthetique, :soinLaser => soinLaser, :soinDermatologie => soinDermatologie } %>
+    
+
+	<div class="container-fluid content_principal">
+	    <div class="row-fluid">
+
+	        <div class="span2">
+	            <%= render 'layouts/sidebarleft' %>
+	        </div>
+
+	        <div class="span10">
+	            <section>
+
+	            	<% if notice %>
+			        	<div class="containe">
+			            	<% if flash[:notice] %><br/>
+			                	<p class="alert alert-success"><%= notice %></p>
+			            	<% end %>
+			            	<% if flash[:alert] %><br/>
+			                	<p class="alert alert-error"><%= alert %></p> 
+			            	<% end %>
+			            	<br/>
+			        	</div>
+	            	<% end %>
+
+	            	
+	            		<%= yield %>
+
+
+	          	</section>
+	        </div>
+
+
+
+	    </div>
+	</div><!-- fin div container-fluid -->
+
+                                
+
+    <%= render "layouts/prefooter" %>
+    <%= render "layouts/footer" %>
+    
+
+
+    <%= javascript_include_tag "application" %>
+
+
+    <header class="fixed-menu"></header>
+    
+    <div class="layout_trigger clean_bg_cont" style="background-color:#cde1d6;"></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

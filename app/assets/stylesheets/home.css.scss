@@ -1,0 +1,92 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#tabs-title{
+    color: $bleu;
+    font-family: Georgia;
+    //font-weight: bold;
+}
+
+.presentation{
+    h2{
+        text-align: center;
+    }
+    img{
+        float: left;
+        padding: 0 40px 30px 20px;
+        height: 300px;
+        width: 200px;
+    }
+    p{
+        margin-right: 40px;
+        text-align: justify;
+    }
+}
+article.well{
+    @include border-radius(17px);
+    h4{
+        text-align:center;
+        color: $orange;
+        border-bottom: 2px solid rgba(77, 128, 77, 0.36);
+        padding-bottom:10px;
+    }
+}
+
+.texteindex{
+    padding: 20px 20px 20px 20px;
+    text-align:left;
+    color: #3e5d16;
+    font-size: 16px;
+    line-height:150%;
+    font-family: Helvetica, Verdana, Arial, Helvetica, "Trebuchet MS", sans-serif;
+    margin-bottom: 20px;
+    background-color:white;
+    border: 0px solid green;
+    @include border-radius(17px);
+    h1 {
+        font-family: Helvetica, Arial, sans-serif ;
+        font-size: 1.5em;
+        color: $orange;
+    }
+    h2{
+    	font-family: Helvetica, Arial, serif ;
+    	font-size: 1.3em;
+    }
+    h3{
+    	font-family: Georgia, Arial, Helvetica, serif ;
+    	font-size: 1.2em;
+    }
+}
+
+.index{ 
+	h1{
+	    text-align:center;
+	    color:$bleu;
+	    font-size: 1.7em;
+	    font-family: "Trebuchet MS";
+	    margin-bottom: 30px;
+	}
+}
+
+
+.temoignages{
+    ul{
+        list-style-type:none;
+    }
+    h3{
+        font-size: 1.3em;
+        line-height: 20px;
+        text-decoration: underline;
+    }
+}
+
+.actualites{ 
+    h3{
+        font-size: 1em;
+        text-decoration: underline;
+    }
+    ul{
+        list-style-type:none;
+    }
+}

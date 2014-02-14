@@ -1,0 +1,79 @@
+<style>
+
+</style>
+
+<div class="pre_footer">
+    <div class="container">
+        <aside id="footer_bar" class="row">
+
+
+            <div class="span3">
+                <div class="sidepanel widget_flickr">
+                    <div class="bg_title"><h4 class="sidebar_header">Laser</h4></div>
+                    <div class="flickr_widget_wrapper">
+                    <ul>
+                        
+                        <% soinLaser.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>
+                        
+                    </ul>
+                    </div>
+                </div><!-- .sidepanel -->                        
+            </div>
+
+            
+            <div class="span3">
+                <div class="sidepanel widget_flickr">
+                    <div class="bg_title"><h4 class="sidebar_header">Chirurgie Esthétique</h4></div>
+                    <div class="flickr_widget_wrapper">
+                    <ul>
+                    	
+                    	<% soinChirurgie.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>
+
+                    </ul>
+                    </div>
+                </div><!-- .sidepanel -->                        
+            </div>                
+
+            <div class="span3">
+                <div class="sidepanel widget_flickr">
+                    <div class="bg_title"><h4 class="sidebar_header">Médecine Esthétique</h4></div>
+                    <div class="flickr_widget_wrapper">
+                    <ul>
+                        
+                        <% soinMedecine.each do |soin| %>
+                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        <% end %>
+                        
+                    </ul>
+                    </div>
+                </div><!-- .sidepanel -->                        
+            </div>
+            
+            
+
+            
+
+            <div class="span3">
+
+                <div class="sidepanel widget_flickr">
+                    <div class="bg_title"><h4 class="sidebar_header">Contact Info</h4></div>
+                    <div class="flickr_widget_wrapper">
+                    <ul>
+                        <li><p><i class="icon-map-marker"></i>&nbsp; 37 rue Duquesne 69006 Lyon </p></li>
+                        <li><p><i class="icon-phone"></i>&nbsp; Téléphone : 04 78 94 37 79  </p></li>
+                        <!--<li><p><i class="icon-mobile-phone icon-white"></i>&nbsp; Portable : 06 88 22 60 71 </p></li>-->
+                        <li><p> <i class="icon-envelope "> </i>&nbsp; <a href="mailto:info@cliniqueesthetique.com" style="color:#777777;">info@cliniqueesthetique.com</a> </p></li>
+                        <li><p><i class="icon-globe"></i>&nbsp; <a href="http://www.cliniqueesthetique.com" style="color:#777777;">cliniqueesthetique.com</a></p></li>
+                        
+                    </ul>
+                    </div>
+                </div><!-- .sidepanel --> 
+                
+            </div>                
+        </aside>
+    </div>
+</div><!-- .pre_footer -->

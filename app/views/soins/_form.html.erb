@@ -1,0 +1,34 @@
+<%= form_for(@soin) do |f| %>
+  <% if @soin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@soin.errors.count, "error") %> prohibited this soin from being saved:</h2>
+
+      <ul>
+      <% @soin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Titre de la Page" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, options_for_select([ ["chirurgie", "chirurgie"], ["medecine", "medecine"], ["dermatologie", "dermatologie"], ["laser", "laser"], ["esthetique", "esthetique"] ]) %>
+  </div>
+  <div class="field">
+    <%= f.label "Metas keywords" %><br />
+    <%= f.text_field :metas %>
+  </div>
+  <div class="field">
+    <%= f.label "Contenu de la page" %><br />
+    <%= f.text_area :body1, :rows => 9 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Creer la page soin", :class => 'btn btn-large btn-warning' %>
+  </div>
+<% end %>

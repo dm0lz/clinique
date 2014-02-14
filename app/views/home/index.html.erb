@@ -1,0 +1,90 @@
+<article>
+
+
+
+	<div class="span9 texteindex index">
+
+		<div class="tabbable">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#lB" id="tabs-title" data-toggle="tab">La Clinique</a></li>
+            <li><a href="#lA"  id="tabs-title" data-toggle="tab">Notre Philosophie</a></li>
+            <!--<li><a href="#lC" data-toggle="tab">Nos Spécialités</a></li>
+            <li><a href="#lD" data-toggle="tab">Section 4</a></li>-->
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane  presentation" id="lA">
+            	<h2> L’art et l’esthétique médicale</h2><br/>
+            	<%= image_tag "/img/BOUGUEREAU-le-soir_01.jpg" %>
+                <p>Savoir allier l’art, la chirurgie et la médecine 
+				esthétique, retrouver les bonnes proportions qui
+				nous amènent à une meilleure harmonie dans 
+				nos formes c’est notre objectif.</p>
+				<p>L’équilibre dans nos traitements nous amènent 
+				à savoir doser nos interventions et à ne pas 
+				corriger toujours à outrance nos disgrâces 
+				comme cela se voit souvent, amenant des 
+				résultats des fois pires que le défaut qu’elles 
+				prétendaient supprimer.</p>
+				Ce sont les excès bien connus de la chirurgie 
+				esthétique.
+				Le respect de la personnalité et le caractère de 
+				chaque individu nous semblent aussi 
+				indispensables car c’est dans la singularité 
+				que l’on sublime au mieux la beauté. 
+				</p>
+            	
+            </div>
+            <div class="tab-pane active" id="lB">
+            	<br/>
+			    <h4 style="float:left; margin-right: 20px;"> <%= image_tag('/images/visage.png', :size => '120x130') %> </h4>
+				<p>La clinique Duquesne est à votre service pour vous proposer les dernières avancées de la technologie en matière 
+				d’esthétique médicale en privilégiant toujours les actes de médecine et de chirurgie esthétique avec un minimum de 
+				risques pour un maximum d’efficacité.</p>
+
+				<p>Aujourd’hui les progrès de la médecine et la chirurgie se mettent aussi au service de la beauté et de l’apparence 
+				physique, alors pourquoi ne pas en profiter ?</p>
+				<p>Une consultation doit être effectuée avant toutes intervention avec un délai minimum de 15 jours entre celle-ci et 
+				l’intervention.</p> 
+
+				<!--<h5 style="float:right;margin-left: 20px;"> <%= image_tag('/images/homme_femme.jpg', :size => '320x130') %> </h5>-->
+				
+				<p>Le bénéfice psychologique d’une correction esthétique peut être considérable et malgré cela beaucoup de patients(es) 
+				n’osent pas franchir le pas : avis contradictoires, peur des «ratés».</p>
+				
+				<p>Les progrès considérables de la médecine esthétique ont permis de remplacer beaucoup d'interventions à caractère 
+				chirurgical par des traitements médicaux et souvent avec de meilleurs résultats.</p>
+
+				<p>Alors n’hésitez pas à nous demander conseil.</p>
+            </div>
+          </div>
+        </div> <!-- /tabbable -->
+
+	</div> <!-- span 9 -->
+
+
+	<div class="span3">
+
+		<article class="well nouvellestechniques clearfix">
+
+			<h4>ACTUALITES</h4>
+
+			<ul>
+				<% @nouveautes.each do |nouveaute| %>
+					<li>
+						<h3><a href="/nouveautes/<%= nouveaute.slug %>"><%= nouveaute.title %></a></h3>
+						<p><%= raw(truncate(nouveaute.content, :length => 80)) %></p>
+						<a href="/nouveautes/<%= nouveaute.slug %>" class="btn btn-small">Lire la suite</a>
+					</li>
+				<% end %>
+			</ul>
+
+			<br/>
+
+			<p style="margin-right:25px;"><a href="/nouveautes" class="btn btn-small btn-success" style="width:100%;">Voir toutes les Actualités</a></p>
+
+		</article>
+
+	</div> <!-- span 3 -->
+
+   
+</article>

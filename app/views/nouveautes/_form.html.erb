@@ -1,0 +1,30 @@
+<%= form_for(@nouveaute) do |f| %>
+  <% if @nouveaute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nouveaute.errors.count, "error") %> prohibited this nouveaute from being saved:</h2>
+
+      <ul>
+      <% @nouveaute.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label "image" %>
+    <%= image_tag @nouveaute.image_url, :size => "50x50" if @nouveaute.image_url %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

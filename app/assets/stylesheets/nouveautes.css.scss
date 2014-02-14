@@ -1,0 +1,19 @@
+// Place all the styles related to the Nouveautes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.nouvellestechniques{
+    ul{
+        list-style-type:none;
+        li{
+            a{
+                color: $bleu;
+            }
+        }
+    }
+    h3{
+        font-size: 1.3em;
+        line-height: 20px;
+        text-decoration: underline;
+        font-size: 1em;
+    }
+}
