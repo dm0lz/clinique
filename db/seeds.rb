@@ -1100,8 +1100,9 @@ On peut pratiquement garantir un taux de repousse des greffons de 95% sur tout c
 </br>
 
 <strong>Pour plus d'informations vous pouvez consulter notre site spécialisé :</strong>
-<a href='www.greffesdecheveux.com'>www.greffesdecheveux.com</a>
-
+<span class='gdc_link'>
+  <a href='http://www.greffesdecheveux.com'>www.greffesdecheveux.com</a>
+</span>
 </p>
 
 
