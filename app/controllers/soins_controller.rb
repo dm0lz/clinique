@@ -20,12 +20,13 @@ class SoinsController < ApplicationController
   # GET /soins/1
   # GET /soins/1.json
   def show
+    redirect_to soin_show_path
     @soin = Soin.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @soin }
-    end
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @soin }
+    #end
   end
 
   # GET /soins/new

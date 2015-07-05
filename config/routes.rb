@@ -1,6 +1,7 @@
 Clinique::Application.routes.draw do
   
 
+
   resources :nouveautes
 
 
@@ -12,6 +13,12 @@ Clinique::Application.routes.draw do
 
   resources :soins
 
+  constraints(Subdomain) do
+    get '/', to: 'home#show', as: 'soin_show'
+  end
+
+  #get '/', to: 'home#show', as: 'soin_show', :constraints => { :subdomain => /.+/ }
+  #get '/:id', to: 'home#show', as: 'soin_show', :constraints => { :subdomain => /.+/ }
 
   get "home/index"
 
@@ -25,6 +32,9 @@ Clinique::Application.routes.draw do
   match 'consultation' => 'consultation#create', :as => 'consultation', :via => :post
 
   match 'soins/destroyPicture' => 'soins#destroyPicture', :via => :post
+
+  root :to => 'home#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -75,7 +85,6 @@ Clinique::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

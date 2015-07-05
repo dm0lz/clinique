@@ -28,13 +28,15 @@
             <ul class="menu">
 
                 <li class="current-menu-parent">
-                    <a href="/">ACCUEIL</a>
+                    <!--<a href="/">ACCUEIL</a>-->
+                    <%= link_to "ACCUEIL", root_url(:host => "www" + '.' + request.domain) %>
                 </li>
 
                 <li><a href="javascript:void(0)">CHIRURGIE ESTHETIQUE</a>
                     <ul class="sub-menu">
                         <% soinChirurgie.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                            <li><%= link_to soin.title.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
+                            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
                         <% end %>   
                     </ul>
                 </li>
@@ -42,7 +44,7 @@
                 <li><a href="javascript:void(0)">LASER</a>
                     <ul class="sub-menu">
                         <% soinLaser.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                            <li><%= link_to soin.title.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
                         <% end %>   
                     </ul>
                 </li>
@@ -50,7 +52,7 @@
                 <li><a href="javascript:void(0)">MEDECINE ESTHETIQUE</a>
                     <ul class="sub-menu">
                         <% soinMedecine.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                            <li><%= link_to soin.title.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
                         <% end %>   
                     </ul>
                 </li>

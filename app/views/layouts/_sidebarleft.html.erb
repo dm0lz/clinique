@@ -5,7 +5,8 @@
         <li class="nav-header">Indications Esthétiques</li>
 
         <% soinEsthetique.each do |soin| %>
-            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+            <li><%= link_to soin.title.downcase.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
+            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
         <% end %>
 
     </ul>
@@ -13,9 +14,10 @@
     <ul class="nav nav-tabs nav-stacked">
 
         <li class="nav-header">Dermatologie</li>
-
+        <%#= binding.pry %>
         <% soinDermatologie.each do |soin| %>
-            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+            <li><%= link_to soin.title.downcase.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
+            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
         <% end %>
 
     </ul>

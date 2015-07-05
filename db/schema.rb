@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20130705155913) do
     t.string   "slug"
   end
 
+  add_index "nouveautes", ["slug"], :name => "index_nouveautes_on_slug"
+
   create_table "soins", :force => true do |t|
     t.string   "title"
     t.text     "body1"

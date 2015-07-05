@@ -32,6 +32,8 @@ module Clinique
       #:host => "http://sheltered-bastion-5464.herokuapp.com/"
     }
 
+    config.autoload_paths += Dir["#{config.root}/lib", "#{config.root}/lib/**/"]
+
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

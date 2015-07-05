@@ -14,7 +14,8 @@
                     <ul>
                         
                         <% soinLaser.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
+                            <li><%= link_to soin.title.downcase.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
                         <% end %>
                         
                     </ul>
@@ -28,9 +29,10 @@
                     <div class="bg_title"><h4 class="sidebar_header">Chirurgie Esthétique</h4></div>
                     <div class="flickr_widget_wrapper">
                     <ul>
-                    	
-                    	<% soinChirurgie.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                        
+                        <% soinChirurgie.each do |soin| %>
+                            <li><%= link_to soin.title.downcase.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
+                            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
                         <% end %>
 
                     </ul>
@@ -45,7 +47,8 @@
                     <ul>
                         
                         <% soinMedecine.each do |soin| %>
-                            <li><%= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>
+                            <li><%= link_to soin.title.downcase.capitalize, root_url(:host => soin.slug + '.' + request.domain) %></li>
+                            <!--<li><%#= link_to soin.title.capitalize, "/soins/#{soin.slug}" %></li>-->
                         <% end %>
                         
                     </ul>
