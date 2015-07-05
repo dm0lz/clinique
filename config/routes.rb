@@ -2,7 +2,7 @@ Clinique::Application.routes.draw do
   
 
 
-  resources :nouveautes
+  resources :nouveautes, path: "actualites"
 
 
   get "admin/index"

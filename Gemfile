@@ -41,6 +41,7 @@ gem 'mercury-rails'
 gem 'devise'
 
 gem 'pry'
+gem 'pry-rails'
 
 gem 'turbolinks'
 

@@ -71,16 +71,16 @@
 			<ul>
 				<% @nouveautes.each do |nouveaute| %>
 					<li>
-						<h3><a href="/nouveautes/<%= nouveaute.slug %>"><%= nouveaute.title %></a></h3>
+						<h3><a href="/actualites/<%= nouveaute.slug %>"><%= nouveaute.title %></a></h3>
 						<p><%= raw(truncate(nouveaute.content, :length => 80)) %></p>
-						<a href="/nouveautes/<%= nouveaute.slug %>" class="btn btn-small">Lire la suite</a>
+						<a href="/actualites/<%= nouveaute.slug %>" class="btn btn-small">Lire la suite</a>
 					</li>
 				<% end %>
 			</ul>
 
 			<br/>
 
-			<p style="margin-right:25px;"><a href="/nouveautes" class="btn btn-small btn-success" style="width:100%;">Voir toutes les Actualités</a></p>
+			<p style="margin-right:25px;"><a href="/actualites" class="btn btn-small btn-success" style="width:100%;">Voir toutes les Actualités</a></p>
 
 		</article>
 
